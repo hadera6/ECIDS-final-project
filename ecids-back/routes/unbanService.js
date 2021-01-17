@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const Citizen = require("../models/Citizen.js");
 
 
-router.post('/banService', function (req, res,) {
+router.post('/unbanService', function (req, res,) {
   
     Citizen.findOne({id : req.body.id}, function(err, citizen) {
 
@@ -13,7 +13,7 @@ router.post('/banService', function (req, res,) {
             res.status(404).send("Citizen not found.");
         }
         else
-            citizen.service = 1 ,
+            citizen.service = 0,
             
             citizen.save().then(citizen => {
                 res.json('Citizen banned from services successfully!');

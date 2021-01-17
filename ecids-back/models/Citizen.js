@@ -67,12 +67,12 @@ bloodtype: {
 },
 
 crime: {
-    type: Boolean,
-    default: false
+    type: Number,
+    default: 0
 },
 service: {
-    type: Boolean,
-    default: false
+    type: Number,
+    default: 0
 },
 maritalstatus: {
     type: String,
