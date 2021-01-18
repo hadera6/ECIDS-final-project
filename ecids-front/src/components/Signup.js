@@ -1,5 +1,6 @@
 import React , { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn,MDBInput,MDBCardBody, MDBCard} from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, 
+  MDBInput,MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink} from 'mdbreact';
 import '../index.css';
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -26,8 +27,6 @@ class Signup extends Component {
     }
   }
 
-
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
@@ -44,7 +43,7 @@ onChange = e => {
 onSubmit = e => {
     e.preventDefault();
 const newUser = {
-      role: this.state.role,
+      role: document.getElementById("role").value,
       fname: this.state.fname,
       username: this.state.username,
       password: this.state.password,
@@ -55,126 +54,144 @@ const newUser = {
 render() {
     const { errors } = this.state;
 return (
-        <MDBContainer className="form-register">
-          <MDBRow>
-            <MDBCol md="2" lg="3">
-            </MDBCol>
-            <MDBCol md="8" lg="6">
-            <MDBCard>
 
-            <div className="header pt-3 form-header lighten-2">
-              <MDBRow className="d-flex justify-content-start">
-                <h3 className="deep-grey-text mt-3 mb-4 pb-1 mx-5">
-                  <center>Signup</center>
-                </h3>
-              </MDBRow>
-            </div>
+  <div>
 
-            <MDBCardBody className="mx-4 mt-4">
+      <MDBNavbar color="" dark expand="md" className="header-nav  top-nav">
+        <MDBNavbarBrand>
+          <img className="logo-img" src="logo1.jpg" />
+        </MDBNavbarBrand>
+          <MDBNavbarNav left>
+          <strong className="white-text" id="logo" ><h1>ECIDS</h1></strong>
+          </MDBNavbarNav>
+          <MDBNavbarNav right>
+            <MDBNavItem>
+            <MDBBtn onClick={()=>{window.location.href="/"}}color="primary">Login</MDBBtn>
+            </MDBNavItem>
+          </MDBNavbarNav>
+      </MDBNavbar>
 
-            <form noValidate onSubmit={this.onSubmit}>
-                
-                <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
-                  Your Role
-                </label>
+      <MDBContainer className="form-register">
+        <MDBRow>
+          <MDBCol md="2" lg="3">
+          </MDBCol>
+          <MDBCol md="8" lg="6">
+          <MDBCard>
 
-                <div>
-                  <select className="browser-default custom-select" id="role" 
-                  
-                  value={this.state.role}
-                  onChange={this.onChange}
-                  
-                  >
-                    <option value="admin">Admin</option>
-                    <option value="employee">Employee</option>
-                    <option value="user">User</option>
-                  </select>
-                </div>
+          <div className="header pt-3 form-header lighten-2">
+            <MDBRow className="d-flex justify-content-start">
+              <h3 className="deep-grey-text mt-3 mb-4 pb-1 mx-5">
+                <center>Signup</center>
+              </h3>
+            </MDBRow>
+          </div>
 
-                <MDBInput
-                
-                  onChange={this.onChange}
-                  value={this.state.fname}
-                  error={errors.fname}
-                  id="fname"
-                  type="text"
-                  placeholder="First Name"
-                  label="First Name"
+          <MDBCardBody className="mx-4 mt-4">
 
-                  className={classnames("form-control", {
-                    invalid: errors.fname
-                  })}
-
-                />
-                <span className="red-text">{errors.fname}</span>
-               
-                <MDBInput
-                
-                  onChange={this.onChange}
-                  value={this.state.username}
-                  error={errors.username}
-                  id="username"
-                  type="text"
-                  placeholder="User name"
-                  label="User Name"
-
-                  className={classnames("form-control", {
-                    invalid: errors.username
-                  })}
-
-                />
-                <span className="red-text">{errors.username}</span>
+          <form noValidate onSubmit={this.onSubmit}>
               
+              <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
+                Your Role
+              </label>
+
+              <div>
+                <select className="browser-default custom-select" id="role" 
                 
-                <MDBInput   
-
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                  placeholder="Password"
-                  label="Password"
-
-                  className={classnames("form-control", {
-                    invalid: errors.password
-                  })}
-
-                />
-                <span className="red-text">{errors.password}</span>
-               
+                value={this.state.role}
+                onChange={this.onChange}
                 
-                <MDBInput
+                >
+                  <option value="admin">Admin</option>
+                  <option value="employee">Employee</option>
+                  <option value="user">User</option>
+                </select>
+              </div>
 
-                  onChange={this.onChange}
-                  value={this.state.password2}
-                  error={errors.password2}
-                  id="password2"
-                  type="password"
-                  placeholder="Confirm Password"
-                  label="Confirm password"
-                  
-                  className={classnames("form-control", {
-                    invalid: errors.password2
-                  })}
+              <MDBInput
+              
+                onChange={this.onChange}
+                value={this.state.fname}
+                error={errors.fname}
+                id="fname"
+                type="text"
+                placeholder="First Name"
+                label="First Name"
 
-                />
-                <span className="red-text">{errors.password2}</span>
-                <br />
+                className={classnames("form-control", {
+                  invalid: errors.fname
+                })}
+
+              />
+              <span className="red-text">{errors.fname}</span>
+              
+              <MDBInput
+              
+                onChange={this.onChange}
+                value={this.state.username}
+                error={errors.username}
+                id="username"
+                type="text"
+                placeholder="User name"
+                label="User Name"
+
+                className={classnames("form-control", {
+                  invalid: errors.username
+                })}
+
+              />
+              <span className="red-text">{errors.username}</span>
+            
+              
+              <MDBInput   
+
+                onChange={this.onChange}
+                value={this.state.password}
+                error={errors.password}
+                id="password"
+                type="password"
+                placeholder="Password"
+                label="Password"
+
+                className={classnames("form-control", {
+                  invalid: errors.password
+                })}
+
+              />
+              <span className="red-text">{errors.password}</span>
+              
+              
+              <MDBInput
+
+                onChange={this.onChange}
+                value={this.state.password2}
+                error={errors.password2}
+                id="password2"
+                type="password"
+                placeholder="Confirm Password"
+                label="Confirm password"
                 
-                <div className="text-center mt-4">
-                  <MDBBtn color="blue" type="submit">
-                    Signup
-                  </MDBBtn>
-                </div>
-              </form>
-              </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-        );
-      }
+                className={classnames("form-control", {
+                  invalid: errors.password2
+                })}
+
+              />
+              <span className="red-text">{errors.password2}</span>
+              <br />
+              
+              <div className="text-center mt-4">
+                <MDBBtn color="blue" type="submit">
+                  Signup
+                </MDBBtn>
+              </div>
+            </form>
+            </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+    </div>
+    );
+  }
 };
 
 Signup.propTypes = {

@@ -11,6 +11,14 @@ const displayOneCitizen = require("./routes/displayOneCitizen.js");
 const banService = require("./routes/banService.js");
 const unbanService = require("./routes/unbanService.js");
 const verifyId = require("./routes/verifyId.js");
+const setWanted = require("./routes/setWanted.js");
+const unsetWanted = require("./routes/unsetWanted.js");
+const getNotification = require("./routes/getNotification.js");
+const postNotification = require("./routes/postNotification.js");
+const updateAccount = require("./routes/updateAccount.js");
+const madeTransaction = require("./routes/madeTransaction.js");
+const getTransaction = require("./routes/getTransaction.js");
+
 
 
 const app = express();
@@ -64,7 +72,20 @@ app.use("/api", unbanService);
 
 app.use("/api", verifyId);
 
-//app.use("/api", unbanService);
+app.use("/api", setWanted);
+
+app.use("/api", unsetWanted);
+
+app.use("/api", getNotification);
+
+app.use("/api", postNotification);
+
+app.use("/api", updateAccount);
+
+app.use("/api", madeTransaction);
+
+app.use("/api", getTransaction);
+
 
 
 const port = process.env.PORT || 5000;

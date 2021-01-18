@@ -25,7 +25,7 @@ class TopNavigation extends Component {
         return (
 
             <MDBNavbar className="flexible-navbar top-nav" light expand="md" scrolling>
-                <MDBNavbarBrand href="/">
+                <MDBNavbarBrand href="/" className="ecids">
                     <strong>ECIDS</strong>
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick = { this.onClick } />

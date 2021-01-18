@@ -3,7 +3,6 @@ import { BrowserRouter as Router,Route, Switch} from 'react-router-dom';
 import DashBoard from'./components/DashBoard.js';
 import Login from'./components/Login.js';
 import Signup from'./components/Signup.js';
-import LoginNav from'./components/LoginNav.js';
 import './index.css';
 
 import { Provider } from "react-redux";
@@ -14,7 +13,6 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import PrivateRoute from "./components/private-routes/PrivateRoute";
-import LoginPage from './components/LoginPage.js';
 
 
 // Check for token to keep user logged in
@@ -45,8 +43,8 @@ class App extends Component {
       <Provider store={store}>
         <Switch>
 
-          <Route path='/' exact component={LoginPage} /> 
-          <Route path='/intro' component={LoginPage} />
+          <Route path='/' exact component={Login} /> 
+          <Route path='/signup' component={Signup} />
           <Switch>
             <PrivateRoute path="/dashboard" component={DashBoard} />
           </Switch>

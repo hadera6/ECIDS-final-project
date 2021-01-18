@@ -11,6 +11,15 @@ const NotificationSchema = new Schema({
     type: String,
     required: true
   },
+  title:{
+    type: String,
+    required: true
+
+  },
+  photo:{
+    type: String,
+    required:true
+  },
   date: {
     type: Date,
     default: Date.now

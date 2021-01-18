@@ -1,4 +1,5 @@
 
+
 module.exports = function generateRegId(fname, lname) {
 
     const str = `${fname} ${lname}`;
@@ -15,4 +16,4 @@ module.exports = function generateRegId(fname, lname) {
     const newid = Id.toString();
     return newid;
 
-  };
+};

@@ -19,6 +19,27 @@ lname: {
     required: true
 },
 
+motherName:{
+    type:String,
+    required:false
+
+},
+
+fatherName:{
+    type:String,
+    required:false
+},
+
+emergency_name:{
+    type:String,
+    require:true
+
+},
+emergency_number:{
+    type:String,
+    required:true
+},
+
 sex : {
     type: String,
     required: true

@@ -259,6 +259,18 @@ label {
   color: black;
 
 }
+.ecids {
+
+  font-size: large;
+
+}
+
+#male , #female {
+
+  margin:auto;
+  font-size: smaller;
+
+}
 
 
 

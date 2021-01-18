@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Routes from './Routes';
 import TopNavigation from './TopNavigation.js';
 import SideNavigation from './SideNavigation.js';
-import Footer from './Footer';
 import '../index.css';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 
@@ -10,32 +9,27 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions";
 
-import { user_role } from "../actions/authActions";
-
-
 class DashBoard extends Component {
   onLogoutClick = e => {
 
-    e.preventDefault();
-    this.props.logoutUser();
-    console.log(this.props.user_role);
+  e.preventDefault();
+  this.props.logoutUser();
     
   };
-render() {
+  render() {
+  
     const { user } = this.props.auth;
-    
-return (
+  return (
       
       <div className="flexible-content">
     
-          <TopNavigation onLClick={this.onLogoutClick}/>
-          <SideNavigation type="admin"/>
-          <main id="content" className="p-5">
-            <Routes type="admin"/>
-          </main>
+        <TopNavigation onLClick={this.onLogoutClick}/>
+        <SideNavigation type="employee"/>
+        <main id="content" className="p-5">
+          <Routes type="employee"/>
+        </main>
         
-  
-        </div>
+      </div>
     );
   }
 }

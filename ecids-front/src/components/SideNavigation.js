@@ -16,25 +16,25 @@ const SideNavigation = (props) => {
             <MDBListGroup className="list-group-flush">
                 <NavLink exact={true} to="/dashboard/homepage" activeClassName="activeClass">
                     <MDBListGroupItem >
-                        <MDBIcon icon="chart-pie" className="mr-3"/>
+                    <MDBIcon icon="user" className="mr-3"/>
                         Home page
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/dashboard/verifyid" activeClassName="activeClass">
                     <MDBListGroupItem  >
-                        <MDBIcon icon="user" className="mr-3"/>
+                    <MDBIcon icon="user" className="mr-3"/>
                         Verify Id
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/dashboard/detailcitizen" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="table" className="mr-3"/>
+                    <MDBIcon icon="user" className="mr-3"/>
                         Citize detail
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/dashboard/usetting" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="map" className="mr-3"/>
+                    <MDBIcon icon="user" className="mr-3"/>
                         Setting
                     </MDBListGroupItem>
                 </NavLink>
@@ -51,31 +51,31 @@ const SideNavigation = (props) => {
                 <MDBListGroup className="list-group-flush">
                     <NavLink exact={true} to="/dashboard/addemployee" activeClassName="activeClass">
                         <MDBListGroupItem className="side-nav">
-                            <MDBIcon icon="chart-pie" className="mr-3"/>
+                        <MDBIcon icon="user" className="mr-3"/>
                             Add Employee
                         </MDBListGroupItem>
                     </NavLink>
                     <NavLink to="/dashboard/transaction" activeClassName="activeClass">
                         <MDBListGroupItem className="side-nav">
-                            <MDBIcon icon="user" className="mr-3"/>
+                        <MDBIcon icon="user" className="mr-3"/>
                             Transaction
                         </MDBListGroupItem>
                     </NavLink>
                     <NavLink to="/dashboard/postnotification" activeClassName="activeClass">
                         <MDBListGroupItem className="side-nav">
-                            <MDBIcon icon="table" className="mr-3"/>
+                        <MDBIcon icon="user" className="mr-3"/>
                             Post Notification
                         </MDBListGroupItem >
                     </NavLink>
                     <NavLink to="/dashboard/asetting" activeClassName="activeClass">
                         <MDBListGroupItem className="side-nav">
-                            <MDBIcon icon="map" className="mr-3"/>
+                        <MDBIcon icon="user" className="mr-3"/>
                             Setting
                         </MDBListGroupItem>
                     </NavLink>
                     <NavLink to="/dashboard/report" activeClassName="activeClass">
                         <MDBListGroupItem className="side-nav">
-                            <MDBIcon icon="map" className="mr-3"/>
+                        <MDBIcon icon="user" className="mr-3"/>
                             Report
                         </MDBListGroupItem>
                     </NavLink>
@@ -92,7 +92,7 @@ const SideNavigation = (props) => {
             <MDBListGroup className="list-group-flush">
                 <NavLink exact={true} to="/dashboard/registercitizen" activeClassName="activeClass">
                     <MDBListGroupItem className="side-nav">
-                        <MDBIcon icon="chart-pie" className="mr-3"/>
+                    <MDBIcon icon="user" className="mr-3"/>
                         Add Citizen
                     </MDBListGroupItem>
                 </NavLink>
@@ -104,27 +104,27 @@ const SideNavigation = (props) => {
                 </NavLink>
                 <NavLink to="/dashboard/prepareid" activeClassName="activeClass">
                     <MDBListGroupItem className="side-nav">
-                        <MDBIcon icon="table" className="mr-3"/>
+                    <MDBIcon icon="user" className="mr-3"/>
                         Prepare ID
                     </MDBListGroupItem>
                 </NavLink>
 
                 <NavLink to="/dashboard/notification" activeClassName="activeClass">
                     <MDBListGroupItem className="side-nav">
-                        <MDBIcon icon="map" className="mr-3"/>
+                    <MDBIcon icon="user" className="mr-3"/>
                         Notification
                     </MDBListGroupItem>
                 </NavLink>
 
                 <NavLink to="/dashboard/esetting" activeClassName="activeClass">
                     <MDBListGroupItem className="side-nav">
-                        <MDBIcon icon="map" className="mr-3"/>
+                    <MDBIcon icon="user" className="mr-3"/>
                         Setting
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/dashboard/banservice" activeClassName="activeClass">
                     <MDBListGroupItem className="side-nav">
-                        <MDBIcon icon="map" className="mr-3"/>
+                    <MDBIcon icon="user" className="mr-3"/>
                         Ban service
                     </MDBListGroupItem>
                 </NavLink>

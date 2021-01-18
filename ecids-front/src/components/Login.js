@@ -1,5 +1,6 @@
 import React , {Component}from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, 
+  MDBInput,MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink} from 'mdbreact';
 import '../index.css';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -49,6 +50,21 @@ this.props.loginUser(userData);
 render() {
     const { errors } = this.state;
 return (
+
+<div>
+    <MDBNavbar color="" dark expand="md" className="header-nav  top-nav">
+        <MDBNavbarBrand>
+          <img className="logo-img" src="logo1.jpg" />
+        </MDBNavbarBrand>
+          <MDBNavbarNav left>
+          <strong className="white-text" id="logo" ><h1>ECIDS</h1></strong>
+          </MDBNavbarNav>
+          <MDBNavbarNav right>
+            <MDBNavItem>
+            <MDBBtn onClick={()=>{window.location.href="/signup"}}color="primary">Signup</MDBBtn>
+            </MDBNavItem>
+          </MDBNavbarNav>
+      </MDBNavbar>
      
       <MDBContainer className="form-login" >
         <MDBRow>
@@ -138,6 +154,7 @@ return (
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      </div>
       
     );
   };

@@ -30,13 +30,15 @@ export const loginUser = userData => dispatch => {
     .then(res => {
       // Save to localStorage
 // Set token to localStorage
-      const { token } = res.data;
-      const { role } = res.data
+      const { token , role } = res.data;
+      
 
-      global_role=role;
-      console.log(global_role);
+      localStorage.setItem("user", role);
 
       localStorage.setItem("jwtToken", token);
+
+      const loogged = localStorage.getItem("user");
+
       // Set token to Auth header
       setAuthToken(token);
       // Decode token to get user data
@@ -64,9 +66,6 @@ export const setUserLoading = () => {
     type: USER_LOADING
   };
 };
-
-export const user_role = global_role;
-
 // Log user out
 export const logoutUser = () => dispatch => {
   // Remove token from local storage
