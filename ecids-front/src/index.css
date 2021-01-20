@@ -265,11 +265,11 @@ label {
 
 }
 
+
 #male , #female {
-
-  margin:auto;
-  font-size: smaller;
-
+  
+  width:1.5em;
+  height:1.5em;
 }
 
 

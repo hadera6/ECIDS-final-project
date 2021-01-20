@@ -20,23 +20,23 @@ lname: {
 },
 
 motherName:{
-    type:String,
+    type: String,
     required:false
 
 },
 
 fatherName:{
-    type:String,
+    type: String,
     required:false
 },
 
-emergency_name:{
-    type:String,
+emergencyname:{
+    type: String,
     require:true
 
 },
-emergency_number:{
-    type:String,
+emergencynumber:{
+    type: String,
     required:true
 },
 

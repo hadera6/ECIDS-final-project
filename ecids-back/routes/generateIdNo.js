@@ -11,7 +11,7 @@ module.exports = function generateCardId(fname, lname) {
   const hours = ('0' + t.getHours()).slice(-2);
   const minutes = ('0' + t.getMinutes()).slice(-2);
   const seconds = ('0' + t.getSeconds()).slice(-2);
-  const Id = `C${acronym}${hours}${minutes}${seconds}/${date}/${month}/${year}`;
+  const Id = `C${acronym}${hours}${minutes}${seconds}${date}${month}-${year}`;
   const newid = Id.toString();
   return newid;
 

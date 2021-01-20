@@ -9,8 +9,8 @@ class AddCitizen extends React.Component {
     lname: "",
     motherName: "",
     fatherName: "",
-    emergency_name: "",
-    emergency_number: "",
+    emergencyname: "",
+    emergencynumber: "",
     sex : "",
     age: 0,
     address: "",
@@ -32,12 +32,20 @@ class AddCitizen extends React.Component {
   submitHandler = event => {
     event.preventDefault();
     event.target.className += " was-validated";
+    
+    axios
+    .post("http://localhost:5000/api/registerCitizen", this.state)
+    .then(res =>alert("Citizen registered successfully")) // re-direct sto login on successful register
+    .catch(err =>
+      alert("Something wrong citizen not registered"))
+  
   };
 
   changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  
   onRadioClick = gender => () => {
     this.setState({
       sex: gender
@@ -56,7 +64,7 @@ class AddCitizen extends React.Component {
           onSubmit={this.submitHandler}
           noValidate
         >
-          <MDBRow>
+          <MDBRow >
             <MDBCol md="4" className="mb-3">
               <MDBInput
                 onChange={this.changeHandler}
@@ -66,8 +74,9 @@ class AddCitizen extends React.Component {
                 type="text"
                 className="form-control"
                 value={this.state.fname}
+
                 label="First Name"
-                autocomplete="off"
+                autoComplete="off"
                 required
               />
             </MDBCol>
@@ -85,8 +94,6 @@ class AddCitizen extends React.Component {
                 required
             />
             </MDBCol>
-
-
             <MDBCol md="4" className="mb-3">
               <MDBInput
                 onChange={this.changeHandler}
@@ -101,7 +108,6 @@ class AddCitizen extends React.Component {
             />
             </MDBCol>
           </MDBRow>
-
           <MDBRow>
             <MDBCol md="4" className="mb-3">
               <MDBInput
@@ -173,8 +179,8 @@ class AddCitizen extends React.Component {
               <MDBInput
                 onChange={this.changeHandler}
                 value={this.state.placeBirth}
-                name="placeBirth"
-                id="placeBirth"
+                name="placebirth"
+                id="placebirth"
                 type="text"
                 className="form-control"
                 value={this.state.placeBirth}
@@ -188,8 +194,8 @@ class AddCitizen extends React.Component {
               <MDBInput
                 onChange={this.changeHandler}
                 value={this.state.dateBirth}
-                name="dateBirth"
-                id="dateBirth"
+                name="datebirth"
+                id="datebirth"
                 type="text"
                 className="form-control"
                 value={this.state.dateBirth}
@@ -329,12 +335,12 @@ class AddCitizen extends React.Component {
             <MDBCol md="6" lg="6" className="mb-3">
               <MDBInput
                 onChange={this.changeHandler}
-                value={this.state.emergency_name}
-                name="emergency_name"
-                id="emergency_name"
+                value={this.state.emergencyname}
+                name="emergencyname"
+                id="emergencyname"
                 type="text"
                 className="form-control"
-                value={this.state.emergency_name}
+                value={this.state.emergencyname}
                 label="Person's name to called at emergency"
                 required
             />
@@ -344,12 +350,12 @@ class AddCitizen extends React.Component {
             <MDBCol md="6" lg="6" className="mb-3">
               <MDBInput
                 onChange={this.changeHandler}
-                value={this.state.emergency_num}
-                name="emergency_num"
-                id="emergency_num"
+                value={this.state.emergencynumber}
+                name="emergencynumber"
+                id="emergencynumber"
                 type="text"
                 className="form-control"
-                value={this.state.emergency_num}
+                value={this.state.emergencynumber}
                 label="Phone number to called at emergency"
                 required
             />
@@ -364,5 +370,4 @@ class AddCitizen extends React.Component {
     );
   }
 }
-
 export default AddCitizen;

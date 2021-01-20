@@ -25,6 +25,8 @@ router.post('/registerCitizen', function (req, res,) {
     sex: req.body.sex,
     age: req.body.age,
     address: req.body.address,
+    mothername: req.body.mothername,
+    fathername:req.body.fathername,
     placebirth: req.body.placebirth,
     datebirth: req.body.datebirth,
     nationality: req.body.nationality,
@@ -34,6 +36,8 @@ router.post('/registerCitizen', function (req, res,) {
     bloodtype: req.body.bloodtype,
     maritalstatus: req.body.maritalstatus,
     educationstatus: req.body.educationstatus,
+    emergencyname:req.body.emergencyname,
+    emergencynumber:req.body.emergencynumber,
     photo: req.body.photo,
     document: req.body.document,
   
