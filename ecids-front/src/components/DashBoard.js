@@ -19,7 +19,7 @@ class DashBoard extends Component {
   render() {
   
     const { user } = this.props.auth;
-  return (
+    return (
       
       <div className="flexible-content">
     

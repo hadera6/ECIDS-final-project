@@ -13,27 +13,28 @@ const SideNavigation = (props) => {
             <a href="#!" className="logo-wrapper waves-effect">
                 <img alt="MDB React Logo" className="img-fluid" src={logo}/>
             </a>
+            
             <MDBListGroup className="list-group-flush">
                 <NavLink exact={true} to="/dashboard/homepage" activeClassName="activeClass">
-                    <MDBListGroupItem >
+                    <MDBListGroupItem className="side-nav">
                     <MDBIcon icon="user" className="mr-3"/>
                         Home page
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/dashboard/verifyid" activeClassName="activeClass">
-                    <MDBListGroupItem  >
+                    <MDBListGroupItem className="side-nav">
                     <MDBIcon icon="user" className="mr-3"/>
                         Verify Id
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/dashboard/detailcitizen" activeClassName="activeClass">
-                    <MDBListGroupItem>
+                    <MDBListGroupItem className="side-nav">
                     <MDBIcon icon="user" className="mr-3"/>
                         Citize detail
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/dashboard/usetting" activeClassName="activeClass">
-                    <MDBListGroupItem>
+                    <MDBListGroupItem className="side-nav">
                     <MDBIcon icon="user" className="mr-3"/>
                         Setting
                     </MDBListGroupItem>

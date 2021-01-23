@@ -123,26 +123,32 @@ class AddCitizen extends React.Component {
             />
             </MDBCol>
             <MDBCol md="4" className="mb-3">
+              <MDBRow>
               <MDBInput
                 onClick={this.onRadioClick("male")}
                 checked={this.state.sex === "male" ? true : false}
-                label='Male'
                 type='radio'
                 id='male'
                 name='female'
                 containerClass='mr-5'
+                className="male"
               />
+              <label className="sex-label">Male</label>
+              </MDBRow>
             </MDBCol>
             <MDBCol md="4" className="mb-3">
-              <MDBInput
-                onClick={this.onRadioClick("female")}
-                checked={this.state.sex === "female" ? true : false}
-                label='Female'
-                type='radio'
-                id='female'
-                name="female"
-                containerClass='mr-5'
-              />
+              <MDBRow>
+                <MDBInput
+                  onClick={this.onRadioClick("female")}
+                  checked={this.state.sex === "female" ? true : false}
+                  type='radio'
+                  id='female'
+                  name="female"
+                  containerClass='mr-5'
+                  className="female"
+                />
+                <label className="sex-label">Female</label>
+              </MDBRow>
             </MDBCol>
           </MDBRow>
 

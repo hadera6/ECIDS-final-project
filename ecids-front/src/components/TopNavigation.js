@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBIcon } from 'mdbreact';
 import '../index.css';
+import logo from "../assets/brand.png";
 import { MDBBtn } from "mdbreact";
 
 class TopNavigation extends Component {
@@ -26,7 +27,7 @@ class TopNavigation extends Component {
 
             <MDBNavbar className="flexible-navbar top-nav" light expand="md" scrolling>
                 <MDBNavbarBrand href="/" className="ecids">
-                    <strong>ECIDS</strong>
+                 <img alt="MDB React Logo" className="img-fluid" src={logo}/>
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick = { this.onClick } />
                 <MDBCollapse isOpen = { this.state.collapse } navbar>

@@ -20,7 +20,7 @@ class BanService extends Component {
 
       <MDBCardImage className="img-fluid"  /> 
       <MDBCardBody>
-          <MDBCardTitle className="text-center mb-2 font-bold">Hadera Teame</MDBCardTitle>
+          <MDBCardTitle className="text-center mb-2 font-bold">Robel Gebre Hiwot</MDBCardTitle>
           <MDBCardTitle sub className="text-center indigo-text mb-2 font-bold">Student</MDBCardTitle>
           <MDBCardText>
               <strong className="mb-2">About:</strong>

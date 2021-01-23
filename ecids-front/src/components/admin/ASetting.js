@@ -1,24 +1,40 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, 
+  MDBInput,MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink} from 'mdbreact';
 
 class ASetting extends React.Component {
   state = {
-    fname: "Mark",
-    lname: "Otto",
+    fname: "",
+    lname: "",
     email: "",
-    city: "",
-    state: "",
-    zip: ""
+    password: "",
+    password2: "",
+
   };
 
+  submitHandler = event => {
+
+    event.preventDefault();
+    event.target.className += " was-validated";
+
+  }
+  
   changeHandler = event => {
+    
     this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
     return (
-      <div>
-        <form>
+      
+      <MDBCard>
+      <MDBCardBody className="mx-4 mt-4">
+      <MDBContainer>
+      <form
+          className="needs-validation"
+          onSubmit={this.submitHandler}
+          noValidate
+        >
           <MDBRow>
             <MDBCol md="4">
               <MDBInput
@@ -26,9 +42,10 @@ class ASetting extends React.Component {
                 name="fname"
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterNameEx"
+                id="fname"
                 label="First name"
                 required
+                istext
               />
             </MDBCol>
             <MDBCol md="4">
@@ -37,71 +54,60 @@ class ASetting extends React.Component {
                 name="lname"
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterEmailEx2"
+                id="lname"
                 label="Last name"
                 required
               />
             </MDBCol>
-            <MDBCol md="4">
-              <MDBInput
-                value={this.state.email}
-                onChange={this.changeHandler}
-                type="email"
-                id="materialFormRegisterConfirmEx3"
-                name="email"
-                label="Your Email address"
-              />
-            </MDBCol>
+            
           </MDBRow>
           <MDBRow>
             <MDBCol md="4">
-              <MDBInput
-                value={this.state.city}
-                onChange={this.changeHandler}
-                type="text"
-                id="materialFormRegisterPasswordEx4"
-                name="city"
-                label="City"
-                required
-              />
+                <MDBInput
+                  value={this.state.email}
+                  onChange={this.changeHandler}
+                  type="email"
+                  id="email"
+                  name="email"
+                  label="Your Email address"
+                  required
+                  
+                />
             </MDBCol>
             <MDBCol md="4">
               <MDBInput
-                value={this.state.state}
+                value={this.state.password}
                 onChange={this.changeHandler}
-                type="text"
-                id="materialFormRegisterPasswordEx4"
-                name="state"
-                label="State"
-                required
+                type="password"
+                id="password"
+                name="password"
+                label="Password"
+                required 
               />
             </MDBCol>
-            <MDBCol md="4">
-              <MDBInput
-                value={this.state.zip}
-                onChange={this.changeHandler}
-                type="text"
-                id="materialFormRegisterPasswordEx4"
-                name="zip"
-                label="Zip"
-                required
-              />
-            </MDBCol>
+            
           </MDBRow>
+            <MDBCol md="4">
+              <MDBInput
+                value={this.state.password2}
+                onChange={this.changeHandler}
+                type="password"
+                id="password2"
+                name="password2"
+                label="Confirm Password"
+                required
+              />
+            </MDBCol> 
           <MDBRow>
-            <MDBInput
-              type="checkbox"
-              value="conditions"
-              id="materialInvalidCheck"
-              required
-              label="Agree to terms and conditions"
-            />
+
           </MDBRow>
           <MDBBtn color="success" type="submit">
-            Submit Form
+            Change
           </MDBBtn>
         </form>
-      </div>
+      </MDBContainer>
+      </MDBCardBody>
+      </MDBCard>
     );
   }
 }

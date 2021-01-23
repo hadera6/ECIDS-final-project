@@ -266,11 +266,20 @@ label {
 }
 
 
-#male , #female {
+.male , .female {
   
-  width:1.5em;
-  height:1.5em;
+  width:1.2em;
+  height:1.2em;
+
+  margin-top: 30px;
+  margin-left: 15px;
 }
+.sex-label{
+
+  margin-top: 30px;
+  margin-left: 5px;
+}
+
 
 
 
